@@ -47,7 +47,7 @@ class Deficient {
     protected static function bootConfig() {
         
         $loader = new FileLoader(new Filesystem, self::$app['path'] . 'config');
-        $config = new Repository($loader, 'production');
+        $config = new Repository($loader, self::$app['env']);
         
         $cg['app'] = $config->get('app');
         $cg['database.fetch'] = $config->get('database.fetch');
@@ -59,11 +59,11 @@ class Deficient {
     }
 
     protected static function bootClasses() {
-        //spostare in un config
-        $controllersDirectory = self::$app['path'] . 'Controllers';
-        $modelsDirectory = self::$app['path'] . 'Models';
-        ClassLoader::register();
-        ClassLoader::addDirectories(array($controllersDirectory, $modelsDirectory));
+
+        if (self::$config->get('app.autoload')) {
+            ClassLoader::register();
+            ClassLoader::addDirectories(self::$config->get('app.autoload'));            
+        }
     }
         
     protected static function bootView() {
