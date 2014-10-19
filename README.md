@@ -40,7 +40,7 @@ you need to make a basic file structure the suggestd one is:
 
 
 
-```
+```php
 <?php
 #index.php
 
