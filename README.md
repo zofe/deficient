@@ -32,6 +32,8 @@ you need to make a basic file structure the suggestd one is:
     /config
         app.php
         database.php
+    /models
+        User.php
     /cache
     /views
         hello.blade.php
@@ -74,6 +76,10 @@ return array(
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
     ),
+    
+    'autoload'  => array(
+        'models',
+    )
 );
 
 
@@ -108,4 +114,11 @@ return array(
     ),
 );
 
+
+#User.php
+
+class User extends \Illuminate\Database\Eloquent\Model {
+    public $table = 'user_table';
+    
+}
 ```
