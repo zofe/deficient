@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+.htaccess
+/vendor
+/cache
+/views
+/config
+composer.lock
+index.php
+

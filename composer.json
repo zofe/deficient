@@ -1,0 +1,31 @@
+{
+    "name": "zofe/deficient",
+    "description": "Experimental  subset of laravel components",
+    "keywords": ["php","mvc", "modules", "eloquent", "blade", "cms"],
+    "homepage": "https://github.com/zofe/deficient",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felice Ostuni",
+            "email": "felice.ostuni@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "illuminate/support": "4.1.*",
+        "illuminate/config": "4.1.*",
+        "illuminate/events": "4.1.*",
+        "illuminate/database": "4.1.*",
+        "illuminate/validation": "4.1.*",
+        "illuminate/translation": "4.1.*",
+        "illuminate/cache": "4.1.*",
+        "philo/laravel-blade": "1.*",
+        "zofe/burp": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Zofe\\Deficient": "src/"
+        }
+
+    }
+}
