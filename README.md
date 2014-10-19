@@ -24,7 +24,6 @@ In some other, you need just a great ORM, a valid template engine, form validati
 install via composer adding ```"zofe/deficient": "dev-master"```
 
 
-    
 ## usage 
 
 you need to make a basic file structure the suggestd one is: 
