@@ -56,8 +56,12 @@ Deficient::boot(__DIR__);
 //db stuff
 $results = DB::select('select * from mytable');
 
+//eloquent
+$users = User::all();
+
+
 //blade
-echo Deficient::view('hello', compact('results'));
+echo Deficient::view('hello', compact('results','users'));
 
 
 
