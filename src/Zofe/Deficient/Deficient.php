@@ -52,17 +52,18 @@ class Deficient {
         $cg['app'] = $config->get('app');
         $cg['database.fetch'] = $config->get('database.fetch');
         $cg['database.default'] = $config->get('database.default');
-        $cg['database.connections'] = $config->get('database.connections')
-        ;
+        $cg['database.connections'] = $config->get('database.connections');
         self::$app['config'] = $cg;
         self::$config = $config;
     }
 
     protected static function bootClasses() {
 
+        
         if (self::$config->get('app.autoload')) {
+            $dirs = self::$config->get('app.autoload');
             ClassLoader::register();
-            ClassLoader::addDirectories(self::$config->get('app.autoload'));            
+            ClassLoader::addDirectories($dirs);            
         }
     }
         
