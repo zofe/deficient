@@ -48,8 +48,10 @@ class Deficient {
         
         $loader = new FileLoader(new Filesystem, self::$app['path'] . 'config');
         $config = new Repository($loader, self::$app['env']);
+
         
-        $cg['app'] = $config->get('app');
+        $cg['app.locale'] = $config->get('app.locale');
+        $cg['app.fallback_locale'] = $config->get('app.locale');
         $cg['database.fetch'] = $config->get('database.fetch');
         $cg['database.default'] = $config->get('database.default');
         $cg['database.connections'] = $config->get('database.connections');
