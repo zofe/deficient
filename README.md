@@ -32,6 +32,9 @@ you need to make a basic file structure the suggestd one is:
     /config
         app.php
         database.php
+    /lang
+        /en
+           validation.php
     /models
         User.php
     /cache
@@ -125,4 +128,9 @@ class User extends \Illuminate\Database\Eloquent\Model {
     public $table = 'user_table';
     
 }
+
+
+#validation.php
+
+//copy and paste the one in laravel 4.1  
 ```
