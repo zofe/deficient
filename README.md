@@ -52,6 +52,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Zofe\Deficient\Deficient;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 //booting providers
 Deficient::boot(__DIR__);
@@ -62,6 +63,13 @@ $results = DB::select('select * from mytable');
 //eloquent
 $users = User::all();
 
+//validation
+$validator = Validator::make(array('title'=>'abc','description'=>'descr...'), 
+                             array('title'=>'required|min:4','description'=>'required'));
+if ($validator->fails())
+{
+    dd( $validator->messages() );
+}
 
 //blade
 echo Deficient::view('hello', compact('results','users'));
