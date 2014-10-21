@@ -3,7 +3,7 @@ Deficient
 
 It's class that give you some of laravel (4.1) components, without the entire environment.  
 You can also add some other package because I keepd the IOC and service-provider booting.  
-It has also some helper that help you do use concise syntax.
+It has also some helper to keep a concise syntax.
 
 Basically you'll get:
 
