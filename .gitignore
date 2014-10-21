@@ -5,6 +5,7 @@
 /cache
 /views
 /config
+/lang
 /models
 composer.lock
 index.php
