@@ -15,8 +15,7 @@ Basically you'll get:
   
 ## why
 
-In some cases, with big projects, during refactoring you can't switch to Laravel from start, you need to move step by step.  
-In some other, you need just a great ORM, or/and template engine, or form validation, translations.. but not a "framework".
+In some cases, with big projects, during refactoring you can't switch to Laravel from start, you need to move step by step, section by section. In some other, you need just a great ORM, or/and template engine, or form validation, translations.. but not a "framework".
 
 Think to "deficient" as a way to move your app to laravel slowly and quietly, using each component when, where and how you like in your current app.  
 
