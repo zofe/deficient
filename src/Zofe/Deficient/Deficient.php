@@ -10,6 +10,9 @@ use Illuminate\Support\ClassLoader;
 use Illuminate\Support\Facades\Facade;
 use Philo\Blade\Blade;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+
 class Deficient {
     
     protected static $app; //container
@@ -37,6 +40,8 @@ class Deficient {
         self::bootProviders();
 
         Facade::setFacadeApplication(self::$app);
+
+        include __DIR__ . '/helpers.php';
     }
     
     //fare un setEnv con closure
@@ -94,7 +99,11 @@ class Deficient {
 
     }
     
-    public static function View ($view, $parameters = array()) {
+    public static function View($view, $parameters = array()) {
         return self::$view->view()->make($view, $parameters);
     }
+    
+    public static function Config($value, $default = null) {
+        return self::$config->get($value, $default);
+    } 
 }
