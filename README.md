@@ -30,8 +30,8 @@ install via composer adding ```"zofe/deficient": "dev-master"```
 
 
 
-you need to make a basic file structure, to store configurations, views, language files, and models. The suggestd one is: 
-
+you can setup a basic file structure, to store configurations, views, language files, and models.  
+The suggestd one is: 
 
     /config
         app.php
@@ -46,9 +46,16 @@ you need to make a basic file structure, to store configurations, views, languag
         hello.blade.php
     index.php
 
+you can simply run a setup command in the root of your application (be sure that you've no folder conflict):
+
+    php vendor/zofe/deficient/deficient setup:folders
+    
 
 
 ```php
+
+then you can make an index.php or use Deficient where you want:
+
 <?php
 #index.php
 
@@ -57,15 +64,15 @@ require_once __DIR__ . '/vendor/autoload.php';
 use Zofe\Deficient\Deficient;
 
 
-//booting from current directory 
+//booting from current directory (needed to find config and other folders)
 Deficient::boot("./");
 
 //db stuff
 $results = select('select * from mytable');
 
 //validation
-$validator = validator(array('title'=>'abc','description'=>'descr...'), 
-                             array('title'=>'required|min:4','description'=>'required'));
+$validator = validator(array('title'=>'abc','description'=>'description bla b...'), 
+                       array('title'=>'required|min:4','description'=>'required'));
 if ($validator->fails()){
     dd( $validator->messages() );
 }
@@ -122,74 +129,3 @@ dispatch();
 ```
 
 
-
-Other files you need are simple to understand (and common use for laravel users):
-
-```php
-
-#app.php
-
-return array(
-    'locale'          => 'en',
-    'fallback_locale' => 'en',
-    'views'           => '/views',
-    'cache'           => '/cache',
-
-    'providers' => array(
-        'Illuminate\Events\EventServiceProvider',
-        'Illuminate\Filesystem\FilesystemServiceProvider',
-        'Illuminate\Database\DatabaseServiceProvider',
-        'Illuminate\Translation\TranslationServiceProvider',
-        'Illuminate\Validation\ValidationServiceProvider',
-    ),
-    
-    'autoload'  => array(
-        'models',
-    )
-);
-
-
-
-#dataabase.php
-
-return array(
-
-    'fetch' => PDO::FETCH_CLASS,
-    'default' => 'mysql',
-    'connections' => array(
-        'driver' => 'mysql',
-
-        'sqlite' => array(
-            'driver'   => 'sqlite',
-            'database' => __DIR__.'/../database/production.sqlite',
-            'prefix'   => '',
-        ),
-
-        'mysql' => array(
-            'driver'    => 'mysql',
-            'host'      => 'localhost',
-            'database'  => 'mydatabase',
-            'username'  => 'root',
-            'password'  => '',
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-
-        ),
-
-    ),
-);
-
-
-#User.php
-
-class User extends \Illuminate\Database\Eloquent\Model {
-    public $table = 'user_table';
-    
-}
-
-
-#validation.php
-
-//copy and paste the one in laravel 4.1  
-```
