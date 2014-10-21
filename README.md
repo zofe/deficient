@@ -21,13 +21,20 @@ Think to "deficient" as a way to use laravel without move to laravel, or (better
 
 ## Installation
 
-install via composer adding ```"zofe/deficient": "dev-master"```
+install via composer creating or adding to your composer.json:
 
-
+``
+{
+    "require": {
+        "zofe/deficient": "dev-master"
+    },
+   "minimum-stability" : "dev"
+}
+```
+then running ```composer install```
 
 
 ## usage 
-
 
 
 you can setup a basic file structure, to store configurations, views, language files, and models.  
