@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+
+
+if (isset($argv[1]) and $argv[1] == 'setup:folders') 
+{
+    $dest = __DIR__."/../../..";
+    recurse_copy(__DIR__."/config", $dest."/config");
+    recurse_copy(__DIR__."/lang", $dest."/lang");
+    recurse_copy(__DIR__."/models", $dest."/models");
+    recurse_copy(__DIR__."/views", $dest."/views");
+    mkdir($dest."/cache", 0755);
+}
+
+/*
+if (isset($argv[1]) and $argv[1] == 'setup:index')
+{
+    $dest = __DIR__."/../../..";
+    copy(__DIR__."/.htaccess", $dest."/.htaccess");
+    copy(__DIR__."/index.php", $dest."/index.php");
+}
+*/
+
+
+function recurse_copy($src,$dst) {
+    $dir = opendir($src);
+    @mkdir($dst);
+    while(false !== ( $file = readdir($dir)) ) {
+        if (( $file != '.' ) && ( $file != '..' )) {
+            if ( is_dir($src . '/' . $file) ) {
+                recurse_copy($src . '/' . $file,$dst . '/' . $file);
+            }
+            else {
+                copy($src . '/' . $file,$dst . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
+} 

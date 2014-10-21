@@ -1,12 +1,7 @@
 .DS_Store
 .idea
-.htaccess
 /vendor
 /cache
-/views
-/config
-/lang
-/models
 composer.lock
 index.php
 
