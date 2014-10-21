@@ -108,7 +108,8 @@ $results = DB::select(....
 
 ```
 
-the tiny Burp router integration, you can use it if you need:
+Deficient comes without laravel router, but it has simple alternative: [burp](https://github.com/zofe/burp) router.  
+So you can do something like this:
 
 ```php
 ..
