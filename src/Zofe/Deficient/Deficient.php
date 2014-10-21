@@ -12,6 +12,7 @@ use Philo\Blade\Blade;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Zofe\Burp\Burp;
 
 class Deficient {
     
@@ -42,6 +43,7 @@ class Deficient {
         Facade::setFacadeApplication(self::$app);
 
         include __DIR__ . '/helpers.php';
+        
     }
     
     //fare un setEnv con closure
@@ -70,7 +72,7 @@ class Deficient {
         if (self::$config->get('app.autoload')) {
             $dirs = self::$config->get('app.autoload');
             ClassLoader::register();
-            ClassLoader::addDirectories($dirs);            
+            ClassLoader::addDirectories($dirs);
         }
     }
         
@@ -99,7 +101,8 @@ class Deficient {
 
     }
     
-    public static function View($view, $parameters = array()) {
+    public static function View($view, $parameters = array(), $code = null) {
+        if ($code && $code == "404") header("HTTP/1.0 404 Not Found");
         return self::$view->view()->make($view, $parameters);
     }
     

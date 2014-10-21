@@ -11,7 +11,7 @@ Basically you'll get:
  - validation
  - translation
  - blade
-
+ - burp  (a tiny, non blocking, router)
   
 ## why
 
@@ -89,6 +89,26 @@ $validator = Validator::make(....
 $results = DB::select(....
 
 ```
+
+the tiny Burp router integration, you can use it if you need:
+
+```php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Zofe\Deficient\Deficient;
+
+Deficient::boot("./");
+
+get('/user/(\d+)', function( $id ) {
+    $user = User::find($id);
+    view('view', compact('user'));
+});
+
+
+```
+
+
 
 Other files you need are simple to understand (and common use for laravel users):
 
