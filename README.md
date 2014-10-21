@@ -26,12 +26,11 @@ install via composer adding ```"zofe/deficient": "dev-master"```
 
 
 
-
 ## usage 
 
 
 
-you need to make a basic file structure the suggestd one is: 
+you need to make a basic file structure, to store configurations, views, language files, and models. The suggestd one is: 
 
 
     /config
