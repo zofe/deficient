@@ -50,11 +50,9 @@ you can simply run a setup command in the root of your application (be sure that
 
     php vendor/zofe/deficient/deficient setup:folders
     
-
+Then you can make an index.php or use Deficient where you want:
 
 ```php
-
-then you can make an index.php or use Deficient where you want:
 
 <?php
 #index.php
