@@ -66,10 +66,13 @@ $users = User::all();
 //validation
 $validator = Validator::make(array('title'=>'abc','description'=>'descr...'), 
                              array('title'=>'required|min:4','description'=>'required'));
-if ($validator->fails())
-{
+if ($validator->fails()){
     dd( $validator->messages() );
 }
+
+//translation (return 'accepted' value @ current locale: /lang/en/validation.php )
+echo trans('validation.accepted');
+
 
 //blade
 echo Deficient::view('hello', compact('results','users'));
