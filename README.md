@@ -104,16 +104,16 @@ Deficient::boot("./");
 
 get('/user/(\d+)', function( $id ) {
     $user = User::find($id);
-    view('user_detail', compact('user'));
+    echo view('user_detail', compact('user'));
 });
 
 post('/user/(\d+)', function( $id ) {
     $user = User::find($id)->update($_POST);
-    view('user_detail', compact('user'));
+    echo view('user_detail', compact('user'));
 });
 
 missing(function() {
-    view('error', array(), 404);
+    echo view('error', array(), 404);
     die;
 });
 
