@@ -1,7 +1,7 @@
 Deficient
 ============
 
-It's class that give you some of laravel (4.1) components, without the entire environment.  
+Deficient give you some of laravel (4.1) components, without the entire environment.  
 You can also add some other package because I keepd the IOC and service-provider booting.  
 It has also some helper to keep a concise syntax.
 
@@ -11,7 +11,7 @@ Basically you'll get:
  - validation
  - translation
  - blade
- - burp  (a tiny, non blocking, router)
+ - [burp](https://github.com/zofe/burp) (a tiny, non blocking, router)
   
 ## why
 
@@ -110,6 +110,11 @@ get('/user/(\d+)', function( $id ) {
 post('/user/(\d+)', function( $id ) {
     $user = User::find($id)->update($_POST);
     view('user_detail', compact('user'));
+});
+
+missing(function() {
+    view('error', array(), 404);
+    die;
 });
 
 dispatch();

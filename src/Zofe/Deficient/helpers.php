@@ -45,9 +45,14 @@ if ( ! function_exists('post')) {
     }
 }
 
+if ( ! function_exists('missing')) {
+    function missing( $closure) {
+        Zofe\Burp\Burp::missing( $closure);
+    }
+}
+
 if ( ! function_exists('dispatch')) {
     function dispatch() {
         Zofe\Burp\Burp::dispatch();
     }
-    
 }
