@@ -1,10 +1,9 @@
 Deficient
 ============
 
-It's just an experiment, a class that give you some of laravel (4.1) components, without the entire enviroinment.
-
-You can also add some other package because I keepd the IOC and service-provider booting.
-
+It's class that give you some of laravel (4.1) components, without the entire environment.  
+You can also add some other package because I keepd the IOC and service-provider booting.  
+It has also some helper that help you do use concise syntax.
 
 Basically you'll get:
 
@@ -51,20 +50,16 @@ you need to make a basic file structure the suggestd one is:
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Zofe\Deficient\Deficient;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
 
-//booting providers
-Deficient::boot(__DIR__);
+
+//booting from current directory 
+Deficient::boot("./");
 
 //db stuff
-$results = DB::select('select * from mytable');
-
-//eloquent
-$users = User::all();
+$results = select('select * from mytable');
 
 //validation
-$validator = Validator::make(array('title'=>'abc','description'=>'descr...'), 
+$validator = validator(array('title'=>'abc','description'=>'descr...'), 
                              array('title'=>'required|min:4','description'=>'required'));
 if ($validator->fails()){
     dd( $validator->messages() );
@@ -73,11 +68,31 @@ if ($validator->fails()){
 //translation (return 'accepted' value @ current locale: /lang/en/validation.php )
 echo trans('validation.accepted');
 
+//eloquent
+$users = User::all();
 
 //blade
-echo Deficient::view('hello', compact('results','users'));
+echo view('hello', compact('results','users'));
+```
 
+You can also use laravel Facades, declaring namespaces, i.e.:
 
+```php
+<?php
+
+use Zofe\Deficient\Deficient;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+...
+
+$validator = Validator::make(....
+$results = DB::select(....
+
+```
+
+Other files you need are simple to understand (and common use for laravel users):
+
+```php
 
 #app.php
 
