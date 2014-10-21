@@ -16,14 +16,21 @@ Basically you'll get:
 ## why
 
 In some cases, with big projects, during refactoring you can't switch to Laravel from start, you need to move step by step.  
-In some other, you need just a great ORM, a valid template engine, form validation.. but not a "framework" with it's own router.
+In some other, you need just a great ORM, or/and template engine, or form validation, translations.. but not a "framework".
+
+Think to "deficient" as a way to move your app to laravel slowly and quietly, using each component when, where and how you like in your current app.  
 
 ## Installation
 
 install via composer adding ```"zofe/deficient": "dev-master"```
 
 
+
+
+
 ## usage 
+
+
 
 you need to make a basic file structure the suggestd one is: 
 
@@ -93,18 +100,21 @@ $results = DB::select(....
 the tiny Burp router integration, you can use it if you need:
 
 ```php
-<?php
-require_once __DIR__ . '/vendor/autoload.php';
-
-use Zofe\Deficient\Deficient;
+..
 
 Deficient::boot("./");
 
 get('/user/(\d+)', function( $id ) {
     $user = User::find($id);
-    view('view', compact('user'));
+    view('user_detail', compact('user'));
 });
 
+post('/user/(\d+)', function( $id ) {
+    $user = User::find($id)->update($_POST);
+    view('user_detail', compact('user'));
+});
+
+dispatch();
 
 ```
 
