@@ -52,14 +52,14 @@ The suggestd one is:
     /cache
     /views
         hello.blade.php
-    index.php
+
 
 you create this structure you can simply run a setup command in the root of your application   
 (IMPORTANT: be sure that you've no folder conflict):
 
     php vendor/zofe/deficient/deficient setup:folders
     
-Then you can make an index.php or use Deficient where you want:
+Then you can make an index.php in your root or use Deficient where you want:
 
 ```php
 
