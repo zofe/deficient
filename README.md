@@ -116,12 +116,12 @@ the tiny Burp router integration, you can use it if you need:
 
 Deficient::boot("./");
 
-get('/user/(\d+)', function( $id ) {
+get('^/user/(\d+)$', function( $id ) {
     $user = User::find($id);
     echo view('user_detail', compact('user'));
 });
 
-post('/user/(\d+)', function( $id ) {
+post('^/user/(\d+)$', function( $id ) {
     $user = User::find($id)->update($_POST);
     echo view('user_detail', compact('user'));
 });
