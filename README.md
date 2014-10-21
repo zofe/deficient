@@ -54,8 +54,8 @@ The suggestd one is:
         hello.blade.php
 
 
-you create this structure you can simply run a setup command in the root of your application   
-(IMPORTANT: be sure that you've no folder conflict):
+To create this structure you can simply run a setup command:  
+(__important__: be sure that you've no folders conflict with your current application)
 
     php vendor/zofe/deficient/deficient setup:folders
     
