@@ -65,8 +65,8 @@ if ($validator->fails()){
     dd( $validator->messages() );
 }
 
-//translation (return 'accepted' value @ current locale: /lang/en/validation.php )
-echo trans('validation.accepted');
+//translation (return 'thankyou' value @ current locale: /lang/en/messages.php )
+echo trans('messages.thankyou');
 
 //eloquent
 $users = User::all();
