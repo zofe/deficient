@@ -135,4 +135,8 @@ dispatch();
 
 ```
 
+To create a basic index.php, .htaccess, and some route you can use this command  
+(__important__: be sure that you've no index.php and .htaccess in your current application)
+
+    php vendor/zofe/deficient/deficient setup:router
 

@@ -12,14 +12,14 @@ if (isset($argv[1]) and $argv[1] == 'setup:folders')
     mkdir($dest."/cache", 0755);
 }
 
-/*
-if (isset($argv[1]) and $argv[1] == 'setup:index')
+
+if (isset($argv[1]) and $argv[1] == 'setup:router')
 {
     $dest = __DIR__."/../../..";
     copy(__DIR__."/.htaccess", $dest."/.htaccess");
     copy(__DIR__."/index.php", $dest."/index.php");
 }
-*/
+
 
 
 function recurse_copy($src,$dst) {

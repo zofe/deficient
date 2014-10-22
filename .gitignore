@@ -3,5 +3,5 @@
 /vendor
 /cache
 composer.lock
-index.php
+test.php
 

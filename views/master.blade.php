@@ -1,10 +1,33 @@
-<html>
-<head>
-</head>
-<body>
-....
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title')</title>
 
-@show
-</body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/test/about">About</a></li>
+        </ul>
+        <h3 class="text-muted">@yield('title')</h3>
+      </div>
+
+      <br />
+      <br />
+      <div class="jumbotron">
+      @yield('content')
+      </div>
+
+    </div>
+
+  </body>
 </html>

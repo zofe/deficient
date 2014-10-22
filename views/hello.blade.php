@@ -1,4 +1,9 @@
 @extends('master')
 
-@section('content')<h1>{{ $mena }}</h1>
+@section('content')
+
+<h1>{{ $title or 'Hello' }}</h1>
+<p>
+{{ $content or 'Hello deficient!' }}
+</p>
 @stop
