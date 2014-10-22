@@ -92,8 +92,8 @@ $users = User::all();
 //blade
 echo view('hello', compact('results','users'));
 ```
-
-You can also use laravel Facades, declaring namespaces, i.e.:
+## Laravel Facades
+You can also use laravel Facades, declaring or using full namespaces, i.e.:
 
 ```php
 <?php
@@ -107,7 +107,7 @@ $validator = Validator::make(....
 $results = DB::select(....
 
 ```
-
+## Need a Router?  
 Deficient comes without laravel router, but it has simple alternative: [burp](https://github.com/zofe/burp) router.  
 So you can do something like this:
 
