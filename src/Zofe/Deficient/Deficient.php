@@ -42,8 +42,6 @@ class Deficient {
 
         Facade::setFacadeApplication(self::$app);
 
-        include __DIR__ . '/helpers.php';
-        
     }
     
     //fare un setEnv con closure

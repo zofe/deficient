@@ -116,22 +116,22 @@ So you can do something like this:
 
 Deficient::boot("./");
 
-get('^/user/(\d+)$', function( $id ) {
+route_get('^/user/(\d+)$', function( $id ) {
     $user = User::find($id);
     echo view('user_detail', compact('user'));
 });
 
-post('^/user/(\d+)$', function( $id ) {
+route_post('^/user/(\d+)$', function( $id ) {
     $user = User::find($id)->update($_POST);
     echo view('user_detail', compact('user'));
 });
 
-missing(function() {
+route_missing(function() {
     echo view('error', array(), 404);
     die;
 });
 
-dispatch();
+route_dispatch();
 
 ```
 

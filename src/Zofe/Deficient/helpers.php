@@ -25,34 +25,4 @@ if ( ! function_exists('select')) {
     }
 }
 
-#routing
 
-if ( ! function_exists('get')) {
-    function get($uri, $parameters) {
-        if  (is_object($parameters) && ($parameters instanceof Closure)) {
-           $parameters = array('as'=>$uri, $parameters);
-        }
-        Zofe\Burp\Burp::get($uri, null, $parameters);
-    }
-}
-
-if ( ! function_exists('post')) {
-    function post($uri, $parameters) {
-        if  (is_object($parameters) && ($parameters instanceof Closure)) {
-            $parameters = array('as'=>$uri, $parameters);
-        }
-        Zofe\Burp\Burp::post($uri, null, $parameters);
-    }
-}
-
-if ( ! function_exists('missing')) {
-    function missing( $closure) {
-        Zofe\Burp\Burp::missing( $closure);
-    }
-}
-
-if ( ! function_exists('dispatch')) {
-    function dispatch() {
-        Zofe\Burp\Burp::dispatch();
-    }
-}

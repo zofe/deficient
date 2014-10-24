@@ -25,7 +25,8 @@
     "autoload": {
         "psr-0": {
             "Zofe\\Deficient": "src/"
-        }
+        },
+        "files": ["src/Zofe/Deficient/helpers.php"]
 
     }
 }
