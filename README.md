@@ -58,7 +58,9 @@ To create this structure you can simply run a setup command:
 
     php vendor/zofe/deficient/deficient setup:folders
     
-Then you can make an index.php in your root or use Deficient where you want:
+You must set write permission to /cache folder.  
+Then you can make an index.php in your root or use Deficient where you want in your project:
+
 
 ```php
 
