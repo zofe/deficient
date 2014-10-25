@@ -92,7 +92,7 @@ echo trans('messages.thankyou');
 $users = User::all();
 
 //blade
-echo view('hello', compact('results','users'));
+echo blade('hello', compact('results','users'));
 ```
 ## Laravel Facades
 You can also use laravel Facades, declaring or using full namespaces, i.e.:
@@ -120,16 +120,16 @@ Deficient::boot("./");
 
 route_get('^/user/(\d+)$', function( $id ) {
     $user = User::find($id);
-    echo view('user_detail', compact('user'));
+    echo blade('user_detail', compact('user'));
 });
 
 route_post('^/user/(\d+)$', function( $id ) {
     $user = User::find($id)->update($_POST);
-    echo view('user_detail', compact('user'));
+    echo blade('user_detail', compact('user'));
 });
 
 route_missing(function() {
-    echo view('error', array(), 404);
+    echo blade('error', array(), 404);
     die;
 });
 

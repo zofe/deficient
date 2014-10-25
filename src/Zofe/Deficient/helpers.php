@@ -6,8 +6,8 @@ if ( ! function_exists('config')) {
     }
 }
 
-if ( ! function_exists('view'))  {
-    function view($view, $parameters = array(), $code = null) {
+if ( ! function_exists('blade'))  {
+    function blade($view, $parameters = array(), $code = null) {
         return Zofe\Deficient\Deficient::View($view, $parameters, $code);
     }
 }
