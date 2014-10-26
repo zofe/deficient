@@ -21,7 +21,8 @@ Think to "deficient" as a way to use laravel without move to laravel, or (better
 
 On the other hand:
  - deficient make a vendor of __3.5 mb__
- - laravel build a vendor of __110 mb__
+ - laravel build a vendor of __110 mb__  
+ 
  (using illuminate components of 4.1 version for both)
 
 
