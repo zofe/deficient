@@ -23,7 +23,7 @@ On the other hand:
  - deficient make a vendor of __3.5 mb__
  - laravel build a vendor of __20 mb__  
  
- (using illuminate components of 4.1 version for both)
+ (using illuminate components of 4.1 --prefer-dist version for both)
 
 
 ## Installation
