@@ -1,7 +1,7 @@
 Deficient
 ============
 
-Deficient give you some of laravel (4.1) components, without the entire environment.  
+Deficient give you some of laravel components, without the entire environment.  
 You can also add some other package because I keepd the IOC and service-provider booting.  
 It has also some helper to keep a concise syntax.
 
@@ -18,6 +18,12 @@ Basically you'll get:
 In some cases, with big projects, you can't switch to Laravel from start, you need to move step by step, section by section. In some other, you need just a great ORM, or/and template engine, or form validation, translations.. but not a "framework".
 
 Think to "deficient" as a way to use laravel without move to laravel, or (better) a way to embrace laravel slowly and quietly using each component when, where and how you like in your current app.  
+
+On the other hand:
+ - deficient make a vendor of __3.5 mb__
+ - laravel build a vendor of __110 mb__
+ (using illuminate components of 4.1 version for both)
+
 
 ## Installation
 
