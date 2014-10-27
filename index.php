@@ -9,17 +9,17 @@ Deficient::boot("./");
 
 
 route_get('^/$', array('as'=>'home', function () {
-    echo blade('hello');
+    echo blade('deficient.hello');
     die;
 }));
 
 route_get('^/test/(\w+)$', array('as'=>'test', function ($slug) {
-    echo blade('hello', array('title'=>$slug, 'content'=>'Hello '.$slug));
+    echo blade('deficient.hello', array('title'=>$slug, 'content'=>'Hello '.$slug));
     die;
 }));
 
 route_missing(function() {
-    echo blade('error', array(), 404);
+    echo blade('deficient.error', array(), 404);
     die;
 });
 

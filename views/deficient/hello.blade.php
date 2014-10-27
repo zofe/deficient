@@ -1,4 +1,4 @@
-@extends('master')
+@extends('deficient.master')
 
 @section('content')
 
