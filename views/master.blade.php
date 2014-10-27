@@ -27,7 +27,7 @@
       </div>
 
 
-      <div class="jumbotron">
+      <div>
       @yield('content')
       </div>
 
