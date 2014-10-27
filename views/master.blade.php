@@ -15,8 +15,10 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
+        @section('mainmenu')
           <li @if (is_route('^/$'))class="active"@endif><a href="/">Home</a></li>
           <li @if (is_route('^/test/(\w+)$'))class="active"@endif><a href="/test/about">About</a></li>
+        @show
         </ul>
         <h3 class="text-muted">@yield('title')</h3>
       </div>
