@@ -6,6 +6,12 @@ if ( ! function_exists('config')) {
     }
 }
 
+if ( ! function_exists('app')) {
+    function app($item = null) {
+        return Zofe\Deficient\Deficient::app($item);
+    }
+}
+
 if ( ! function_exists('blade'))  {
     function blade($view, $parameters = array(), $code = null) {
         return Zofe\Deficient\Deficient::View($view, $parameters, $code);
@@ -26,3 +32,52 @@ if ( ! function_exists('select')) {
 }
 
 
+if ( ! function_exists('document_code')) {
+    function document_code($file, $start = 0, $end = null) {
+        if (!file_exists($file)) {
+            return "";
+        }
+        
+        if ($end>0) {
+            $code = '';
+            $file = new SplFileObject($file);
+            $iterator = new LimitIterator($file, $start, $end);
+            foreach($iterator as $line) {
+                $code .= $line;
+            }
+        } else {
+            $code = file_get_contents($file);            
+        }
+        $code = preg_replace("#{{ document_code(.*) }}#Us", '', $code);
+        $code = highlight_string($code, true);
+        return "<pre>\n" . $code . "\n</pre>";
+    }
+}
+
+if ( ! function_exists('document_method')) {
+    function document_method($class, $methods)
+    {
+        $rclass = new ReflectionClass($class);
+        $definition = implode("", array_slice(file($rclass->getFileName()), $rclass->getStartLine() - 1, 1));
+        $code = "\n" . $definition . "\n....\n\n";
+
+        if (!is_array($methods))
+            $methods = array($methods);
+
+        foreach ($methods as $method) {
+            $method = new ReflectionMethod($class, $method);
+            $filename = $method->getFileName();
+            $start_line = $method->getStartLine() - 1;
+            $end_line = $method->getEndLine();
+            $length = $end_line - $start_line;
+            $source = file($filename);
+            $content = implode("", array_slice($source, $start_line, $length));
+
+            $code .= $content . "\n\n";
+        }
+
+        $code = highlight_string("<?php " . $code, true);
+        $code = str_replace('&lt;?php&nbsp;', '', $code);
+        return "<pre>\n" . $code . "\n</pre>";
+    }
+}

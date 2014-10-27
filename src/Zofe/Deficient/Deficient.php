@@ -107,4 +107,11 @@ class Deficient {
     public static function Config($value, $default = null) {
         return self::$config->get($value, $default);
     } 
+    
+    public static function app($item = null) {
+        if ($item) {
+            return self::$app['app'][$item];
+        }
+        return self::$app['app'];
+    }
 }
