@@ -101,7 +101,7 @@ class Deficient {
     
     public static function View($view, $parameters = array(), $code = null) {
         if ($code && $code == "404") header("HTTP/1.0 404 Not Found");
-        return self::$view->view()->make($view, $parameters);
+        return self::$view->view()->make($view, $parameters)->render();
     }
     
     public static function Config($value, $default = null) {
