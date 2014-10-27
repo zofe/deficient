@@ -40,8 +40,8 @@ if ( ! function_exists('document_code')) {
         
         if ($end>0) {
             $code = '';
-            $file = new SplFileObject($file);
-            $iterator = new LimitIterator($file, $start, $end);
+            $fileobj = new SplFileObject($file);
+            $iterator = new LimitIterator($fileobj, $start, $end);
             foreach($iterator as $line) {
                 $code .= $line;
             }
@@ -50,7 +50,7 @@ if ( ! function_exists('document_code')) {
         }
         $code = preg_replace("#{{ document_code(.*) }}#Us", '', $code);
         $code = highlight_string($code, true);
-        return "<pre>\n" . $code . "\n</pre>";
+        return basename($file)."<pre>\n" . $code . "\n</pre>";
     }
 }
 
