@@ -7,7 +7,9 @@
     <title>@yield('title')</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-
+    <style>
+    .header { margin-bottom: 20px; }
+    </style>
   </head>
 
   <body>
@@ -20,11 +22,10 @@
           <li @if (is_route('^/test/(\w+)$'))class="active"@endif><a href="/test/about">About</a></li>
         @show
         </ul>
-        <h3 class="text-muted">@yield('title')</h3>
+        <h3 class="text-muted">@yield('title', 'Deficient')</h3>
       </div>
 
-      <br />
-      <br />
+
       <div class="jumbotron">
       @yield('content')
       </div>
