@@ -14,7 +14,6 @@ route_get('^/$', array('as'=>'home', function () {
 }));
 
 route_get('^/test/(\w+)$', array('as'=>'test', function ($slug) {
-    dd(User::all());
     echo blade('deficient.hello', array('title'=>$slug, 'content'=>'Hello '.$slug));
     die;
 }));
