@@ -9,15 +9,16 @@ if (isset($argv[1]) and $argv[1] == 'setup:folders')
     recurse_copy(__DIR__."/lang", $dest."/lang");
     recurse_copy(__DIR__."/models", $dest."/models");
     recurse_copy(__DIR__."/views", $dest."/views");
-    mkdir($dest."/cache", 0777);
+    recurse_copy(__DIR__."/database", $dest."/database");
+    @mkdir($dest."/cache", 0777);
 }
 
 
 if (isset($argv[1]) and $argv[1] == 'setup:router')
 {
     $dest = __DIR__."/../../..";
-    copy(__DIR__."/.htaccess", $dest."/.htaccess");
-    copy(__DIR__."/index.php", $dest."/index.php");
+    @copy(__DIR__."/.htaccess", $dest."/.htaccess");
+    @copy(__DIR__."/index.php", $dest."/index.php");
 }
 
 

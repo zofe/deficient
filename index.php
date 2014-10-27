@@ -14,9 +14,15 @@ route_get('^/$', array('as'=>'home', function () {
 }));
 
 route_get('^/test/(\w+)$', array('as'=>'test', function ($slug) {
+    dd(User::all());
     echo blade('deficient.hello', array('title'=>$slug, 'content'=>'Hello '.$slug));
     die;
 }));
+
+route_get('^/users$', function () {
+    dd( User::all()->toJson());
+    die;
+});
 
 route_missing(function() {
     echo blade('deficient.error', array(), 404);

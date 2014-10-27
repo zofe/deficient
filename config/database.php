@@ -3,16 +3,13 @@
 return array(
 
     'fetch' => PDO::FETCH_CLASS,
-    'default' => 'mysql',
+    'default' => 'sqlite',
     'connections' => array(
-        'driver' => 'mysql',
-
         'sqlite' => array(
             'driver'   => 'sqlite',
-            'database' => __DIR__.'/../database/production.sqlite',
+            'database' => __DIR__.'/../database/deficient.sqlite',
             'prefix'   => '',
         ),
-
         'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',

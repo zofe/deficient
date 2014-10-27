@@ -21,6 +21,7 @@
         @section('mainmenu')
           <li @if (is_route('home'))class="active"@endif><a href="{{ link_route('home') }}">Home</a></li>
           <li @if (is_route('test'))class="active"@endif><a href="{{ link_route('test', array('about')) }}">About</a></li>
+          <li><a href="{{ link_route('^/users$') }}">Users</a></li>
         @show
         </ul>
         <h3 class="text-muted">@yield('title', 'Deficient')</h3>
