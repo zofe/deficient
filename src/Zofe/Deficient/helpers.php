@@ -13,8 +13,8 @@ if ( ! function_exists('app')) {
 }
 
 if ( ! function_exists('blade'))  {
-    function blade($view, $parameters = array(), $code = null) {
-        return Zofe\Deficient\Deficient::View($view, $parameters, $code);
+    function blade($view, $parameters = array(), $code = null, $render = true) {
+        return Zofe\Deficient\Deficient::View($view, $parameters, $code, $render);
     }
 }
 
