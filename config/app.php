@@ -5,7 +5,7 @@ return array(
     'fallback_locale' => 'en',
     'views'           => '/views',
     'cache'           => '/cache',
-
+    'timezone' => 'UTC',
     'providers' => array(
         'Illuminate\Events\EventServiceProvider',
         'Illuminate\Filesystem\FilesystemServiceProvider',

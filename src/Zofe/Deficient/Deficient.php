@@ -57,11 +57,14 @@ class Deficient {
         
         $cg['app.locale'] = $config->get('app.locale');
         $cg['app.fallback_locale'] = $config->get('app.locale');
+        $cg['app.timezone'] = $config->get('app.timezone');
         $cg['database.fetch'] = $config->get('database.fetch');
+        
         $cg['database.default'] = $config->get('database.default');
         $cg['database.connections'] = $config->get('database.connections');
         self::$app['config'] = $cg;
         self::$config = $config;
+        date_default_timezone_set($cg['app.timezone']);
     }
 
     protected static function bootClasses() {
